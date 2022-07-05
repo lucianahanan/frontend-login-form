@@ -11,8 +11,8 @@
   <li><img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" height="20"> Sass SCSS</li>
   <li><img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" height="20"> Media Queries</li>
   <li><img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" height="20"> Flexbox</li>
-  <li><img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" height="20"> Grid</li>
-  <!-- <li><img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" height="20"> Javascript</li> -->
+  <!-- <li><img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" height="20"> Grid</li> -->
+  <li><img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" height="20"> Javascript</li>
 </ul>
 
 I wrote from scratch all code without any video reference.
