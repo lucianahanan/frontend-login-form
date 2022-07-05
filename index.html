@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?display=swap&family=Poppins:wght@500;700" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?display=swap&family=Roboto:wght@500;700" as="style">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Poppins:wght@500;700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Poppins:wght@500;700">
+
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <aside>
+      <img src="./assets/side-image.jpg" alt="Jeep">
+    </aside>
+
+    <header>
+      <a href="#"><img src="./assets/logo.svg" alt="Logo Camp.in" id="logo" tabindex="1"></a>
+
+      <form action="#">
+        <h1>Please Login</h1>
+        <p>Enter your registered information.</p>
+
+        <label for="email">E-mail</label>
+        <input name="email" id="email" type="email" placeholder="Type your e-mail" spellcheck="false" tabindex="2" />
+
+        <label for="password">Password</label>
+        <p class="password"><input name="password" id="password" type="password" placeholder="Type your password" spellcheck="false" tabindex="3" /><span class="eye-off" id="showhide"></span></p>
+
+        <p class="checkbox">
+          <label for="reminder" class="reminder checkcontainer">
+            <input type="checkbox" name="reminder" id="reminder" tabindex="4"><span class="checkmark">Remind me</span>
+          </label>
+          <a href="#" tabindex="5"><strong>Password Forgotten</strong></a>
+        </p>
+
+        <button type="submit" tabindex="6">ENTER</button>
+        <p class="register"><a href="#" tabindex="7">Don't have an account? <strong>Register</strong></a></p>
+      </form>
+    </header>
+  </main>
+
+</body>
+</html>

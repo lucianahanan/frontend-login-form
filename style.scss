@@ -1,0 +1,431 @@
+
+$breakpoints : (
+  desktop:1280px,
+  tablet :1000px,
+  mobile : 480px,
+  tiny   : 380px,
+);
+
+@mixin query($display){
+  @each $key, $value in $breakpoints {
+    //  defining max-width
+    @if ($display == $key) {
+      @media (max-width: $value){ @content; }
+    }
+  }
+}
+
+
+
+/*---------- resets ----------*/
+* {
+  box-sizing: border-box;
+  margin-block: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  margin: 0;
+  padding-block: 0;
+  padding-inline-start: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  scroll-behavior: smooth;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  transition: 200ms;
+}
+ul {
+  list-style-type: none;
+}
+button {
+  border: 0;
+  cursor: pointer;
+  transition: 200ms;
+}
+img {
+  border: 0;
+}
+
+
+// * { border:1px solid rgba(230, 90, 240, 0.5);}
+
+/*---------- globals ----------*/
+:root {
+  --background : #191816;
+  --form       : #24221f;
+  --primary    : #ffc632;
+  --text       : #afb6c2;
+  --text-button: #473404;
+  --title      : #d4ccb6;
+  --white      : #ffffff;
+  --border     : #868686;
+}
+
+body {
+  align-items: center;
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  color: var(--title);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 5vw, 2.4rem);
+  font-weight: 600;
+  line-height: 3.6rem;
+  margin-bottom: 1.0rem;
+}
+
+p {
+  color: var(--text);
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
+  line-height: 1.8rem;
+}
+
+a {
+  color: var(--primary);
+  font-family: Poppins;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 200ms;
+}
+a:hover {
+  color: var(--title);
+}
+a strong {
+  font-weight: 600;
+}
+
+label {
+  font-family: Poppins;
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  padding: 1.4rem;
+}
+input:focus {
+  border: 1px solid transparent;
+  outline: 1px solid var(--primary);
+}
+
+button {
+  background-color: var(--primary);
+  border-radius: 4px;
+  color: var(--text-button);
+  font-family: Poppins;
+  font-size: 1.8rem;
+  letter-spacing: 1.5%;
+  margin-bottom: 1.4rem;
+  max-height: 5.1rem;
+  padding: 1.2rem 3.4rem;
+  text-transform: uppercase;
+  transition: 200ms;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--title);
+  }
+
+  /*---------------------------*/
+        @include query(tablet) {
+        & {
+          padding: 1.2rem 0rem;
+          width: 100%;
+        }
+      }
+}
+
+
+
+/*---------- logo --------------------------------------------------*/
+  #logo {
+    width: 11.5rem;
+    margin: 4.0rem;
+  }
+
+
+
+/*---------- main --------------------------------------------------*/
+main {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0 auto;
+  order: 1;
+  gap: 1px;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+/*---------- aside --------------------------------------------------*/
+aside {
+  order: 2;
+  width: 100%;
+  max-width: 48%;
+  overflow: hidden;
+  /*---------------------------*/
+      @include query(tablet) {
+        display: none;
+      }
+
+  img {
+    width: 100%;
+    max-height: 100vh;
+  }
+}
+
+
+
+/*---------- header --------------------------------------------------*/
+header {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  /*---------------------------*/
+      @include query(tablet) {
+        width: 100%;
+      }
+}
+
+
+
+/*---------- form --------------------------------------------------*/
+form {
+  align-self: center;
+  background-color: var(--form);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 2.4rem;
+  margin: 0 auto;
+  max-height: 51.2rem;
+  padding: 5.5rem clamp(5.0rem, 8.45rem, 11.9rem);
+  /*---------------------------*/
+      @include query(tablet) {
+        background-color: transparent;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+      }
+
+  a {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  h1:before {
+    background-size: 24px 24px;
+    background: url(./assets/log-in.svg) no-repeat 0 center;
+    content: "";
+    padding-left: 24px;
+    padding-right: 10px;
+  }
+
+  label {
+    margin-top: 2.7rem;
+  }
+
+  label[for="password"] {
+    margin-top: 2.0rem;
+  }
+
+  input {
+    background-color: var(--form);
+    border-radius: 4px;
+    color: var(--text);
+    width: 33.5rem;
+    /*---------------------------*/
+        @include query(tablet) {
+          & {
+            width: 100%;
+          }
+        }
+  }
+  input::placeholder {
+    font-size: 1.4rem;
+  }
+
+  input[type="checkbox"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    height: 16px;
+    margin-bottom: 0;
+    outline: 0;
+    width: 16px;
+
+    &:focus {
+      outline-color: var(--primary);
+      outline-width: 1px;
+      outline-style: solid;
+    }
+
+    &:checked {
+      background-color: var(--primary);
+    }
+    &:hover {
+      filter: brightness(60%);
+      background-color: var(--primary);
+    }
+    &:disabled {
+      background: #e6e6e6;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    &:after {
+      border: solid var(--form);
+      border-width: 0 3px 3px 0;
+      content: "";
+      display: none;
+      height: 10px;
+      left: -4px;
+      position: relative;
+      top: -7px;
+      transform: rotate(45deg);
+      width: 5px;
+    }
+    &:checked:after {
+      display: block;
+    }
+    &:disabled:after {
+      border-color: #7b7b7b;
+    }
+  }
+
+  input[type="email"] {
+    background-size: 20px 20px;
+    background: url(./assets/mail.svg) no-repeat 10px center;
+    content: "";
+    min-width: 33rem;
+    padding-left: 35px;
+    padding-right: 10px;
+  }
+  input[type="email"]:focus {
+    background-size: 20px 20px;
+    background: url(./assets/mail-focus.svg) no-repeat 10px center;
+    content: "";
+    min-width: 33rem;
+    padding-left: 35px;
+    padding-right: 10px;
+  }
+
+  p.password {
+    position: relative;
+    margin-bottom: 2.0rem;
+  }
+
+  input[name="password"] {
+    background-size: 20px 20px;
+    background: url(./assets/lock.svg) no-repeat 10px center;
+    content: "";
+    padding-left: 35px;
+    padding-right: 10px;
+  }
+  input[name="password"]:focus {
+    background-size: 20px 20px;
+    background: url(./assets/lock-focus.svg) no-repeat 10px center;
+    content: "";
+    padding-left: 35px;
+    padding-right: 10px;
+  }
+  span.eye-off {
+    background-position-x: 0px;
+    background-size: 20px 20px;
+    background: url(./assets/eye.svg) no-repeat right center;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    right: 10px;
+    top: 13px;
+    width: 20px;
+    z-index: 2;
+  }
+
+
+  /* fix default input background color after selecting an autofilled value */
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:active,
+  input:-internal-autofill-selected {
+    -webkit-box-shadow: 0 0 0 1000px var(--form) inset;
+    -webkit-text-fill-color: var(--text);
+    box-shadow: 0 0 0 1000px var(--form) inset;
+    outline: none;
+  }
+  input:-webkit-autofill:focus {
+    border: 1px solid var(--form);
+    outline: 1px solid var(--primary);
+  }
+  input[type="email"]:-webkit-autofill,
+  input[type="email"]:-webkit-autofill:focus,
+  input[type="email"]:-webkit-autofill:hover,
+  input[type="email"]:-webkit-autofill:active,
+  input[type="email"]:-internal-autofill-selected {
+    content: "";
+      background: url(./assets/mail.svg) no-repeat 10px center;
+      background-size: 20px 20px;
+      padding-left: 35px;
+      padding-right: 10px;
+  }
+  input[type="email"]:-webkit-autofill:focus {
+    content: "";
+    background: url(./assets/mail-focus.svg) no-repeat 10px center;
+  }
+
+  p.checkbox {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.0rem;
+
+    a {
+      white-space: nowrap;
+    }
+
+    label.reminder {
+      align-items: center;
+      display: flex;
+      font-family: Roboto;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 0;
+      margin-top: 0;
+
+      span {
+        line-height: 2.1rem;
+        margin-left: 1.0rem;
+      }
+    }
+  }
+
+  .register {
+    text-align: center;
+  }
+
+}
